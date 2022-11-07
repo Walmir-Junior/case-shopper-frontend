@@ -10,8 +10,8 @@ const Header = ({ onClick1, onClick2, actionName1, actionName2 }) => {
     const showQtyIncart = () => {
 
         if ( cart && cart.length > 0) {
-            const qty = cart && cart.map((i) => {
-                return i && i.quantity
+            const qty = cart.map((product) => {
+                return product.quantity
             })
 
             const sumQty = qty.reduce((sum, i) => {

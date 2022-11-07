@@ -6,7 +6,7 @@ import CartEmpty from "../CartEmpty/CartEmpty";
 const StatusCart = () => {
 
     const {cart} = useContext(GlobalStateContext)
-    //refatorar
+    
     const renderCurrentPage = () => {
         if(cart.length === 0){
             return <CartEmpty/>

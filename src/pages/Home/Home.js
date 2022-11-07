@@ -22,7 +22,7 @@ const Home = () => {
     const getProducts = useRequestData(`${BASE_URL}/products`)
 
     const renderProducts = getProducts && getProducts
-    // analise
+
         .filter((product) => {
             return form.maxPrice === "" || product.price <= form.maxPrice
         })

@@ -4,7 +4,7 @@ import { Buttons, Container, Price, ProductName, ProductPrice, ProductQty, QtyCo
 
 const CartProduct = ({product}) => {
   
-  const {cart, removeProductToCart, decrementQty,incrementQty} = useContext(GlobalStateContext)
+  const { removeProductToCart, decrementQty,incrementQty} = useContext(GlobalStateContext)
 
   
 

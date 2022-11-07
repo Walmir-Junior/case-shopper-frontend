@@ -11,7 +11,9 @@ const GlobalState = (props) => {
 
 
         const alreadyInTheCart = cart && cart.findIndex((productInCart) => {
+            
             return productInCart.id === product.id ? true : false
+
         })
 
 
@@ -26,19 +28,26 @@ const GlobalState = (props) => {
             setCart(copyCart)
 
         } else {
+
             const copyCart = cart && cart.map((productInCart) => {
+
                 if (productInCart.id === product.id) {
+
                     if (productInCart.qty_stok > productInCart.quantity) {
+
                         return {
                             ...productInCart,
                             quantity: productInCart.quantity + 1
                         }
+
                     } else {
+
                         alert("produto esgotado")
                         return productInCart
                     }
 
                 } else {
+
                     return productInCart
                 }
             })
@@ -60,47 +69,51 @@ const GlobalState = (props) => {
         setCart([])
     }
 
-
     const decrementQty = (product) => {
 
         const copyCart = cart && cart.map((productInCart) => {
 
-            if (productInCart.id === product.id) {
-                return {
-                    ...productInCart,
-                    quantity: productInCart.quantity - 1
-                }
+            if (productInCart.id === product.id) {       
+                    return {
+                        ...productInCart,
+                        quantity: productInCart.quantity - 1
+                    }
+
             } else {
+
                 return productInCart
             }
         })
+
         setCart(copyCart)
     }
 
     const incrementQty = (product) => {
 
         const copyCart = cart && cart.map((productInCart) => {
+
             if (productInCart.id === product.id) {
+
                 if (productInCart.qty_stok > productInCart.quantity) {
                     return {
                         ...productInCart,
                         quantity: productInCart.quantity + 1
                     }
+
                 } else {
+
                     alert("produto esgotado")
                     return productInCart
                 }
 
             } else {
+
                 return productInCart
             }
         })
 
         setCart(copyCart)
     }
-
-
-
 
     const value = {
         cart,
